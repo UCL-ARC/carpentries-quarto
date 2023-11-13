@@ -1,0 +1,11 @@
+---
+title: "Carpentries-filters Example"
+filters:
+  - carpentries-filters
+---
+
+## Heading
+
+This filter adds formatting to heading text.
+
+
