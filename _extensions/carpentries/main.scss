@@ -44,7 +44,7 @@
 	src: font('mulish-v5-latin-regular.eot');
 	/* IE9 Compat Modes */
 	src: local(''),
-		font('mulish-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
+		font('mulish-v5-latin-regular.eot') + '?#iefix' format('embedded-opentype'),
 		/* IE6-IE8 */
 		font('mulish-v5-latin-regular.woff2') format('woff2'),
 		/* Super Modern Browsers */
@@ -52,7 +52,7 @@
 		/* Modern Browsers */
 		font('mulish-v5-latin-regular.ttf') format('truetype'),
 		/* Safari, Android, iOS */
-		font('mulish-v5-latin-regular.svg#Mulish') format('svg');
+		font('mulish-v5-latin-regular.svg') + '#Mulish' format('svg');
 	/* Legacy iOS */
 
 }
