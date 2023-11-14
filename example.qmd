@@ -1,9 +1,6 @@
 ---
 title: "Carpentries lesson Example"
-format:
-  carpentries-html:
-    filters:
-      - carpentries-filters
+format: carpentries-html
 ---
 
 ## Questions, objectives, keypoints
