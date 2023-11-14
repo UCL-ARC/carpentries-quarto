@@ -1,0 +1,8 @@
+project:
+  title: "Carpentries lesson"
+  type: carpentries
+
+format:
+  carpentries-html:
+    toc: true
+    toc-location: left

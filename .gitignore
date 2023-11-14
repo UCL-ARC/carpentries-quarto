@@ -2,3 +2,8 @@
 *.pdf
 *_files/
 /.luarc.json
+
+!**/templates/*.html
+
+/.quarto/
+/_site/
