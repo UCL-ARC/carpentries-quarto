@@ -8,3 +8,5 @@ contributes:
       toc: true
       toc-location: left
       theme: [main.scss]
+      filters:
+        - lesson.lua
