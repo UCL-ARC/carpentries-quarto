@@ -1,0 +1,110 @@
+/// Taken from https: //github.com/carpentries/varnish/blob/c59c9ed79746d6d490486f0ebd3245f9edeb7f3a/source/stylesheets/styles.css.scss
+
+/*-- scss:functions --*/
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+/// @access public
+/// @type String
+
+/// Asset URL builder
+/// @access private
+/// @param {String} $type - Asset type, matching folder name
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the asset
+@function asset($type, $file) {
+	@return url($asset_base_path + '/' + $type + '/' + $file);
+}
+
+/// Image asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the image
+/// @require {function} asset
+@function image($file) {
+	@return asset('images', $file);
+}
+
+/// Font asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the font
+/// @require {function} asset
+@function font($file) {
+	@return asset('fonts', $file);
+}
+
+/*-- scss:defaults --*/
+@import "stylesheets/variables.scss";
+
+/* mulish-regular - latin */
+@font-face {
+	font-family: 'Mulish';
+	font-style: normal;
+	font-weight: 400;
+	src: font('mulish-v5-latin-regular.eot');
+	/* IE9 Compat Modes */
+	src: local(''),
+		font('mulish-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		font('mulish-v5-latin-regular.woff2') format('woff2'),
+		/* Super Modern Browsers */
+		font('mulish-v5-latin-regular.woff') format('woff'),
+		/* Modern Browsers */
+		font('mulish-v5-latin-regular.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+		font('mulish-v5-latin-regular.svg#Mulish') format('svg');
+	/* Legacy iOS */
+
+}
+
+@font-face {
+	font-family: "Mulish";
+	src: font("Mulish-Bold.ttf") format("truetype");
+	src: font("Mulish-Bold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+
+/*-- scss:rules --*/
+body {
+	font-family: 'Mulish', sans serif;
+	font-weight: $font_weight_normal;
+}
+
+h1 {
+	font-size: calc(2rem + 1.5vw);
+	font-weight: 700;
+	font-style: normal;
+	line-height: 55px;
+	letter-spacing: 0.01em;
+	color: $black;
+}
+
+h2 {
+	font-size: calc(1.55rem + 0.9vw);
+	font-weight: 600;
+	line-height: 40px;
+	letter-spacing: 0.05em;
+	font-style: normal;
+	color: $black;
+}
+
+h3 {
+	font-size: calc(1.25rem + 0.5vw);
+	font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 31px;
+	letter-spacing: 0.01em;
+	color: $black;
+}
+
+h4 {
+	font-size: calc(1.15rem + 0.3vw);
+	font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 31px;
+	letter-spacing: 0.01em;
+	color: $black;
+}
