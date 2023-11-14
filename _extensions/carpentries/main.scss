@@ -108,3 +108,247 @@ h4 {
 	letter-spacing: 0.01em;
 	color: $black;
 }
+
+blockquote {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	padding-left: 15px;
+	border-left-width: 3px;
+	border-left-style: solid;
+	border-left-color: $gray;
+
+	p {
+		font-size: 1.25rem;
+	}
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	color: $black;
+}
+
+a {
+	color: $blue;
+	text-decoration: none;
+}
+
+a.anchor {
+	display: none;
+	margin-left: 5px;
+	width: Min(0.9em, 20px);
+	height: Min(0.9em, 20px);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-link'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: Min(0.9em, 20px) Min(0.9em, 20px);
+	background-position: center center;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&:hover .anchor {
+		display: inline-block;
+	}
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+table {
+	display: table;
+	max-width: max-content;
+	overflow: auto;
+}
+
+thead>tr>th {
+	font-weight: $font-weight-bold;
+	vertical-align: baseline;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+	--bs-table-accent-bg: none;
+}
+
+.table-striped>tbody>tr:nth-of-type(even)>* {
+	background: $light-gray;
+}
+
+tbody>tr:nth-of-type(odd)>* {
+	--bs-table-accent-bg: none;
+}
+
+tbody>tr:nth-of-type(even)>* {
+	background: $light-gray;
+}
+
+dt>* {
+	font-weight: inherit;
+}
+
+.btn-primary-outline {
+	border: 1px solid $blue;
+	color: $blue;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+
+.btn-primary-outline:hover {
+	color: $blue;
+	background: $very-light-blue;
+}
+
+.btn-primary-outline:active {
+	color: #ffffff;
+	background: $blue;
+}
+
+.figure {
+	max-width: 100%;
+}
+
+figcaption {
+	border-top: 1px solid $black;
+	background: $light-gray;
+	margin-bottom: 25px;
+	padding: 25px;
+}
+
+.section-heading {
+	margin-top: 100px;
+}
+
+.dropdown-item:hover {
+	text-decoration: underline;
+}
+
+.bottom-pagination {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	border-top: 1px solid #ccc;
+}
+
+#instructor,
+#language {
+	line-height: 24px;
+}
+
+.sidebar .accordion-button.collapsed::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230044D7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+	transform: scale(.7) !important;
+}
+
+.sidebar .accordion-button:not(.collapsed)::after {
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230044D7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+	transform: rotate(180deg) scale(.7);
+}
+
+@include media-breakpoint-down(xl) {
+
+	.sidebar .accordion-button.collapsed:not(#instructor):not(#language):not(#chapters):not(#resources)::after {
+		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus'><line x1='12' y1='5' x2='12' y2='19'></line><line x1='5' y1='12' x2='19' y2='12'></line></svg>") !important;
+		transform: none !important;
+	}
+
+	.sidebar .accordion-button:not(.collapsed):not(#instructor):not(#language):not(#flush-collapseNine):not(#chapters):not(#resources)::after {
+		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-minus'><line x1='5' y1='12' x2='19' y2='12'></line></svg>") !important;
+		transform: none !important;
+	}
+
+}
+
+.container {
+	max-width: 1209px;
+}
+
+#eye {
+	display: inline;
+	margin-right: 10px;
+}
+
+@include media-breakpoint-up(xl) {
+
+	.sidebar .accordion-button.collapsed::after {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230044D7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+		transform: scale(.7) !important;
+	}
+
+	.sidebar .accordion-button:not(.collapsed)::after {
+		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230044D7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+		transform: rotate(180deg) scale(.7) !important;
+	}
+
+	h1 {
+		font-size: 44px;
+	}
+
+	h2 {
+		font-size: 32px;
+	}
+
+}
+
+@media print {
+
+	// force solutions and instructor notes to show on print
+	.accordion-collapse {
+		display: unset !important;
+	}
+
+	// do not display navigation or search forms or extraneous decoration
+	button,
+	nav,
+	footer,
+	form.search-form,
+	#to-top,
+	div.callout-square,
+	.lesson-progress {
+		display: none !important;
+	}
+
+	// source: <https://css-tricks.com/almanac/properties/p/page-break/#aa-example>
+	h2 {
+		page-break-before: auto;
+	}
+
+	h3,
+	h4 {
+		page-break-after: avoid;
+	}
+
+	pre,
+	blockquote,
+	.callout,
+	.instructor-note,
+	.challenge-accordion {
+		page-break-inside: avoid;
+		border-style: solid;
+	}
+
+	// add solution heading before the solution
+	.challenge-accordion::before {
+		content: "Solution";
+		display: block;
+		text-size: 18pt;
+		text-decoration: underline;
+	}
+
+	.instructor-note::before {
+		content: "Instructor Note";
+		display: block;
+		text-size: 18pt;
+		text-decoration: underline;
+	}
+
+	pre {
+		overflow: unset !important;
+	}
+}
