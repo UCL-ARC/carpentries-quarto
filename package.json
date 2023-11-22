@@ -1,0 +1,22 @@
+{
+  "name": "the-carpentries",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "./postinstall.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "5.1.3",
+    "feather-icons": "4.28.0",
+    "jquery": "3.6.0",
+    "jquery-visible": "^1.2.0",
+    "svgo": "^2.8.0"
+  },
+  "devDependencies": {
+    "sass": "^1.65.1",
+    "uglify-js": "^3.17.4"
+  }
+}
