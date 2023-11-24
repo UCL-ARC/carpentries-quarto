@@ -13,7 +13,7 @@
     "feather-icons": "4.28.0",
     "jquery": "3.6.0",
     "jquery-visible": "^1.2.0",
-    "svgo": "^2.8.0"
+    "svgo": "^3.0.0"
   },
   "devDependencies": {
     "sass": "^1.65.1",
