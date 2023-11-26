@@ -2,6 +2,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: ${{ github.worklow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 name: Render and Publish
 
 permissions: 
