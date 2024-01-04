@@ -16,7 +16,7 @@
     "svgo": "^3.0.0"
   },
   "devDependencies": {
-    "sass": "1.69.5",
+    "sass": "1.69.7",
     "uglify-js": "3.17.4"
   }
 }
