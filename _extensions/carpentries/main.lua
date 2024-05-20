@@ -1,4 +1,4 @@
-local lustache = require 'lustache'
+local lustache = require("lustache")
 
 -- Read HTML template file
 -- From https://github.com/coatless/quarto-webr/blob/f81f1b51a3c620841602eb0bc429f8f45df3d84a/_extensions/webr/webr.lua
@@ -29,8 +29,8 @@ function setCarpentriesStyling(meta)
 
   -- Create a table of variables to pass to the templates
   local carpentries_vars = {
-    yaml = {},     -- Variables from _quarto.yml metadata
-    site = {       -- title and file paths for site component
+    yaml = {}, -- Variables from _quarto.yml metadata
+    site = {   -- title and file paths for site component
       title = pandoc.utils.stringify(meta.title),
       root = "",
       assets = "_extensions/carpentries/assets/",
