@@ -2,18 +2,20 @@
     id="top"
     class="navbar navbar-expand-md navbar-light bg-white top-nav {{#yaml}}{{carpentry_icon}}{{/yaml}}"
 >
-    <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+    <a class="visually-hidden-focusable skip-link" href="#main-content"
+        >{{ translate.SkipToMain }}</a
+    >
     <div class="container-fluid top-nav-container">
         <div class="col-md-6">
             <div class="large-logo">
                 <img
                     alt="{{#yaml}}{{carpentry_name}}{{/yaml}}"
-                    src="{{#site}}{{assets}}{{/site}}/images/{{#yaml}}{{carpentry_icon}}-logo.svg{{/yaml}}"
+                    src="{{#site}}{{root}}{{/site}}assets/images/{{#yaml}}{{carpentry_icon}}-logo.svg{{/yaml}}"
                 />
                 {{#yaml}}{{#life_cycle}} {{#pre_alpha}}
                 <abbr
                     class="badge badge-light"
-                    title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught."
+                    title="{{ translate.PreAlphaNote }}"
                     style="background-color: #ff4955; border-radius: 5px"
                 >
                     <a
@@ -27,17 +29,14 @@
                             data-feather="alert-octagon"
                             style="border-radius: 5px"
                         ></i>
-                        Pre-Alpha
+                        {{ translate.iPreAlpha }}
                     </a>
-                    <span class="visually-hidden"
-                        >This lesson is in the pre-alpha phase, which means that it is in early
-                        development, but has not yet been taught.</span
-                    >
+                    <span class="visually-hidden">{{ translate.PreAlphaNote }}</span>
                 </abbr>
                 {{/pre_alpha}} {{#alpha}}
                 <abbr
                     class="badge badge-light"
-                    title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback."
+                    title="{{ translate.AlphaNote }}"
                     style="background-color: #ffc700; border-radius: 5px"
                 >
                     <a
@@ -51,17 +50,14 @@
                             data-feather="alert-triangle"
                             style="border-radius: 5px"
                         ></i>
-                        Alpha
+                        {{ translate.iAlpha }}
                     </a>
-                    <span class="visually-hidden"
-                        >This lesson is in the alpha phase, which means that it has been taught once
-                        and lesson authors are iterating on feedback.</span
-                    >
+                    <span class="visually-hidden">{{ translate.AlphaNote }}</span>
                 </abbr>
                 {{/alpha}} {{#beta}}
                 <abbr
                     class="badge badge-light"
-                    title="This lesson is in the beta phase, which means that it is ready for teaching by instructors outside of the original author team."
+                    title="{{ translate.BetaNote }}"
                     style="background-color: #001483; border-radius: 5px"
                 >
                     <a
@@ -75,17 +71,14 @@
                             data-feather="alert-circle"
                             style="border-radius: 5px"
                         ></i>
-                        Beta
+                        {{ translate.iBeta }}
                     </a>
-                    <span class="visually-hidden"
-                        >This lesson is in the beta phase, which means that it is ready for teaching
-                        by instructors outside of the original author team.</span
-                    >
+                    <span class="visually-hidden">{{ translate.BetaNote }}</span>
                 </abbr>
                 {{/beta}} {{#stable}} {{#doi}}
                 <abbr
                     class="badge badge-light"
-                    title="This lesson has passed peer review"
+                    title="{{ translate.PeerReview }}"
                     style="
                         background-color: #ffe7a8;
                         border-color: #0044d7;
@@ -111,7 +104,8 @@
             </div>
         </div>
         <div class="selector-container">
-            {{#yaml}}{{#workbench-beta}}
+            {{! NOTE: we will need to remove this at some point because we are finished with the
+            beta phase }} {{#yaml}}{{#workbench-beta}}
             <div class="beta-alert alert alert-light alert-dismissable fade show" role="alert">
                 {{#pre-beta-date}}
                 <abbr
@@ -180,7 +174,9 @@
                     aria-label="Close"
                 ></button>
             </div>
-            {{/workbench-beta}}{{/yaml}} {{#yaml}}{{#language}}
+            {{/workbench-beta}}{{/yaml}} {{! NOTE: the language section will likely need to be
+            generated on {sandpaper}, so we are not going to translate this now. }}
+            {{#yaml}}{{#language}}
             <div class="dropdown">
                 <button
                     class="btn btn-secondary dropdown-toggle"
@@ -205,8 +201,8 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View
-                    <i data-feather="chevron-down"></i>
+                    <i aria-hidden="true" class="icon" data-feather="eye"></i> {{
+                    translate.InstructorView }} <i data-feather="chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li>
@@ -215,7 +211,7 @@
                             type="button"
                             onclick="window.location.href='../{{this_page}}';"
                         >
-                            Learner View
+                            {{ translate.LearnerView }}
                         </button>
                     </li>
                 </ul>
@@ -227,8 +223,8 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View
-                    <i data-feather="chevron-down"></i>
+                    <i aria-hidden="true" class="icon" data-feather="eye"></i> {{
+                    translate.LearnerView }} <i data-feather="chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li>
@@ -237,7 +233,7 @@
                             type="button"
                             onclick="window.location.href='instructor/{{this_page}}';"
                         >
-                            Instructor View
+                            {{ translate.InstructorView }}
                         </button>
                     </li>
                 </ul>
@@ -250,7 +246,7 @@
 
 <nav
     class="navbar navbar-expand-xl navbar-light bg-white bottom-nav {{#yaml}}{{carpentry_icon}}{{/yaml}}"
-    aria-label="Main Navigation"
+    aria-label="{{ translate.MainNavigation }}"
 >
     <div class="container-fluid nav-container">
         <button
@@ -260,22 +256,22 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="{{ translate.ToggleNavigation }}"
         >
             <span class="navbar-toggler-icon"></span>
-            <span class="menu-title">Menu</span>
+            <span class="menu-title">{{ translate.Menu }}</span>
         </button>
         <div class="nav-logo">
             <img
                 class="small-logo"
                 alt="{{#yaml}}{{carpentry_name}}{{/yaml}}"
-                src="{{#site}}{{assets}}{{/site}}/images/{{#yaml}}{{carpentry_icon}}-logo-sm.svg{{/yaml}}"
+                src="{{#site}}{{root}}{{/site}}assets/images/{{#yaml}}{{carpentry_icon}}-logo-sm.svg{{/yaml}}"
             />
         </div>
-        <div class="lesson-title-md">{{#site}}{{&title}}{{/site}}</div>
+        <div class="lesson-title-md">{{# site }}{{& title }}{{/ site }}</div>
         <div class="search-icon-sm">
             <!-- TODO: do not show until we have search
-      <i role="img" aria-label="search button" data-feather="search"></i>
+        <i role="img" aria-label="{{ translate.SearchButton }}" data-feather="search"></i>
       -->
         </div>
         <div class="desktop-nav">
@@ -288,12 +284,12 @@
                 <li>
                     {{! NOTE: the reason why we do not use the site root here is because we would
                     need to set the site context _before_ overview }}
-                    <a class="nav-link" href="index.html#setup">Setup</a>
+                    <a class="nav-link" href="index.html#setup">{{ translate.Setup }}</a>
                 </li>
                 {{/overview}} {{#instructor}} {{^overview}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{#site}}{{root}}{{/site}}instructor/key-points.html"
-                        >Key Points</a
+                        >{{ translate.KeyPoints }}</a
                     >
                 </li>
                 {{/overview}}
@@ -301,30 +297,30 @@
                     <a
                         class="nav-link"
                         href="{{#site}}{{root}}{{/site}}instructor/instructor-notes.html"
-                        >Instructor Notes</a
+                        >{{ translate.InstructorNotes }}</a
                     >
                 </li>
                 {{^overview}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{#site}}{{root}}{{/site}}instructor/images.html"
-                        >Extract All Images</a
+                        >{{ translate.Extract AllImages }}</a
                     >
                 </li>
                 {{/overview}} {{/instructor}} {{^instructor}} {{^overview}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{#site}}{{root}}{{/site}}key-points.html"
-                        >Key Points</a
+                        >{{ translate.KeyPoints }}</a
                     >
                 </li>
                 {{/overview}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{#site}}{{root}}{{/site}}reference.html#glossary"
-                        >Glossary</a
+                        >{{ translate.Glossary }}</a
                     >
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{#site}}{{root}}{{/site}}profiles.html"
-                        >Learner Profiles</a
+                        >{{ translate.LearnerProfiles }}</a
                     >
                 </li>
                 {{/instructor}} {{#more}}
@@ -335,38 +331,39 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        More <i data-feather="chevron-down"></i>
+                        {{ translate.More }} <i data-feather="chevron-down"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {{{more}}}
+                        {{& more }}
                     </ul>
                 </li>
                 {{/more}}
             </ul>
         </div>
-        <form class="d-flex col-md-2 search-form">
-            <fieldset disabled>
-                <input
-                    class="form-control me-2 searchbox"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                />
-                <button class="btn btn-outline-success tablet-search-button" type="submit">
-                    <i
-                        class="search-icon"
-                        data-feather="search"
-                        role="img"
-                        aria-label="search button"
-                    ></i>
-                </button>
-            </fieldset>
-        </form>
+        <!--
+    <form class="d-flex col-md-2 search-form">
+      <fieldset disabled>
+      <input class="form-control me-2 searchbox" type="search" placeholder="{{ translate.Search }}" aria-label="{{ translate.Search }}">
+        <button class="btn btn-outline-success tablet-search-button"  type="submit">
+          <i class="search-icon" data-feather="search" role="img" aria-label="{{ translate.SearchButton }}"></i>
+        </button>
+      </fieldset>
+    </form>
+    -->
+        {{^overview}}
+        <a
+            class="btn btn-primary"
+            href="{{#site}}{{root}}{{/site}}aio.html"
+            role="button"
+            aria-label="{{ translate.SearchButton }}"
+            >{{ translate.SearchButton }}</a
+        >
+        {{/overview}}
     </div>
     <!--/div.container-fluid -->
 </nav>
 
-<div class="col-md-12 mobile-title">{{#site}}{{&title}}{{/site}}</div>
+<div class="col-md-12 mobile-title">{{# site }}{{& title }}{{/ site }}</div>
 
 {{^overview}}
 <aside class="col-md-12 lesson-progress">
@@ -377,7 +374,7 @@
             role="progressbar"
             style="width: {{progress}}%"
             aria-valuenow="{{progress}}"
-            aria-label="Lesson Progress"
+            aria-label="{{ translate.LessonProgress }}"
             aria-valuemin="0"
             aria-valuemax="100"
         ></div>
