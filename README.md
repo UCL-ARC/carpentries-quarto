@@ -21,3 +21,10 @@ _TODO_: Describe how to use your extension.
 
 Here is the source code for a minimal example: [example.qmd](example.qmd).
 
+## Dependencies
+
+We use [`lustache`](https://github.com/Olivine-Labs/lustache) to handle the _mustache_ templates used by the Carpentries Workbench. A copy of `lustache` was installed locally with [LuaRocks](https://github.com/luarocks/luarocks) within this extension, using
+
+```shell
+luarocks install --tree _extensions lustache
+```
