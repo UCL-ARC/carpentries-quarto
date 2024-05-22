@@ -1,18 +1,22 @@
 local lustache = require("lustache")
 
+local extension = { name = "carpentries", version = "1.0.0" }
+
 -- Add HTML dependencies for the Quarto document
 -- This ensures that the necessary resource files are available in the build directory
 function add_html_dependencies()
   quarto.log.debug("Adding HTML dependencies for Carpentries styling")
   quarto.doc.add_html_dependency({
-    name = "carpentries-style",
-    version = "1.0.0",
+    name = extension.name,
+    version = extension.version,
     scripts = { "assets/scripts.js" },
     stylesheets = { "assets/styles.css" },
     resources = {
-      { name = "icons",             path = "assets/icons" },
-      { name = "assets/images",     path = "assets/images" },
-      { name = "assets/styles.css", path = "assets/styles.css" }
+      { name = "favicon-32x32.png", path = "assets/icons/favicon-32x32.png" },
+      { name = "favicon-16x16.png", path = "assets/icons/favicon-16x16.png" },
+      { name = "site.webmanifest",  path = "assets/site.webmanifest" },
+      -- Copy over all assets
+      { name = "assets",            path = "assets" }
     }
   })
 end
@@ -42,7 +46,7 @@ function render_template(template, context)
 end
 
 function setCarpentriesStyling(meta)
-  local meta_carpentries = meta.carpentries
+  local meta_carpentries = meta.carpentries -- loads the carpentries metadata from _quarto.yml
 
   add_html_dependencies()
 
@@ -51,7 +55,7 @@ function setCarpentriesStyling(meta)
     yaml = {}, -- Variables from _quarto.yml metadata
     site = {   -- title and file paths for site component
       title = pandoc.utils.stringify(meta.title),
-      root = "",
+      root = "site_libs/quarto-contrib/" .. extension.name .. "-" .. extension.version .. "/",
       assets = "_extensions/carpentries/assets/",
     }
   }
