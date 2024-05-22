@@ -55,10 +55,12 @@ function setCarpentriesStyling(meta)
   -- Render HTML templates
   local head = render_template("head.html", carpentries_vars)
   local header = render_template("header.html", carpentries_vars)
+  local footer = render_template("footer.html", carpentries_vars)
 
   -- Include the html templates
   quarto.doc.include_text('in-header', head)
   quarto.doc.include_text('in-header', header)
+  quarto.doc.include_text('after-body', footer)
 end
 
 return {
