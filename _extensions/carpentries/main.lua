@@ -1,5 +1,22 @@
 local lustache = require("lustache")
 
+-- Add HTML dependencies for the Quarto document
+-- This ensures that the necessary resource files are available in the build directory
+function add_html_dependencies()
+  quarto.log.debug("Adding HTML dependencies for Carpentries styling")
+  quarto.doc.add_html_dependency({
+    name = "carpentries-style",
+    version = "1.0.0",
+    scripts = { "assets/scripts.js" },
+    stylesheets = { "assets/styles.css" },
+    resources = {
+      { name = "icons",             path = "assets/icons" },
+      { name = "assets/images",     path = "assets/images" },
+      { name = "assets/styles.css", path = "assets/styles.css" }
+    }
+  })
+end
+
 -- Read HTML template file
 -- From https://github.com/coatless/quarto-webr/blob/f81f1b51a3c620841602eb0bc429f8f45df3d84a/_extensions/webr/webr.lua
 function read_template_file(template)
@@ -27,6 +44,8 @@ end
 function setCarpentriesStyling(meta)
   local meta_carpentries = meta.carpentries
 
+  add_html_dependencies()
+
   -- Create a table of variables to pass to the templates
   local carpentries_vars = {
     yaml = {}, -- Variables from _quarto.yml metadata
@@ -44,13 +63,6 @@ function setCarpentriesStyling(meta)
     end
     carpentries_vars.yaml[k] = v
   end
-
-  -- Add general styling from CSS and JavaScript files
-  quarto.doc.add_html_dependency({
-    name = "carpentries-style",
-    scripts = { "assets/scripts.js" },
-    stylesheets = { "assets/styles.css" }
-  })
 
   -- Render HTML templates
   local head = render_template("head.html", carpentries_vars)
