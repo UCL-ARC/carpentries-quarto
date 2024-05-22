@@ -37,6 +37,7 @@ function setCarpentriesStyling(meta)
     }
   }
 
+  -- Populate the carpentries_vars.yaml table with the metadata, read from _quarto.yml
   for k, v in pairs(meta_carpentries) do
     if type(v) == "table" then
       v = pandoc.utils.stringify(v)
