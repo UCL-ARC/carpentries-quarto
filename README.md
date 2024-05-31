@@ -4,10 +4,8 @@ _TODO_: Add a short description of your extension.
 
 ## Installing
 
-_TODO_: Replace the `<github-organization>` with your GitHub organization.
-
 ```bash
-quarto add <github-organization>/carpentries-filters
+quarto add milanmlft/carpentries-quarto
 ```
 
 This will install the extension under the `_extensions` subdirectory.
