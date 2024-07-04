@@ -5,7 +5,7 @@ _TODO_: Add a short description of your extension.
 ## Installing
 
 ```bash
-quarto add milanmlft/carpentries-quarto
+quarto add UCL-ARC/carpentries-quarto
 ```
 
 This will install the extension under the `_extensions` subdirectory.
